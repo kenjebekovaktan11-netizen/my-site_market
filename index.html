@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoMarket — Продажа авто</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="jss.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a class="logo" href="#">
+        <span class="logo__mark">A</span>
+        <span class="logo__text">AutoMarket</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#catalog">Каталог</a>
+        <a href="#how">Как купить</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+   
+      <div class="header__actions">
+  <div class="account" id="accountWidget">
+    <button class="account__btn" id="openAuth" type="button">Войти</button>
+
+    <div class="account__menu" id="accountMenu">
+      <div class="account__head">
+        <div class="account__avatar" id="accountAvatar">A</div>
+        <div class="account__info">
+          <div class="account__name" id="accountName">Имя</div>
+          <div class="account__email" id="accountEmail">email</div>
+        </div>
+      </div>
+
+      <button class="account__item" id="accountProfile" type="button">Профиль</button>
+      <button class="account__item" id="accountMyAds" type="button">Мои объявления</button>
+      <button class="account__item" id="accountFavs" type="button">Избранное</button>
+
+      <div class="account__sep"></div>
+      <button class="account__item account__item--danger" id="accountLogout" type="button">Выйти</button>
+    </div>
+  </div>
+
+  <button class="btn btn--primary add-ad-btn" type="button">Подать объявление</button>
+</div>
+
+      <button id="menu" class="burger"> ≡ </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <div class="pill">Безопасные сделки • Проверка авто • Подбор</div>
+          <h1 class="hero__title">Найди свою машину<br />быстро и красиво</h1>
+          <p class="hero__subtitle">
+            
+          </p>
+
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#catalog">Смотреть каталог</a>
+            <a class="btn btn--ghost" href="#how">Как это работает</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="stat__num">2 340+</div>
+              <div class="stat__label">объявлений</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">120+</div>
+              <div class="stat__label">дилеров</div>
+            </div>
+            <div class="stat">
+              <div class="stat__num">24/7</div>
+              <div class="stat__label">поддержка</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual" aria-hidden="true">
+          <div class="glass-card">
+            <div class="glass-card__top">
+              <div class="dot dot--red">1</div>
+              <div class="dot dot--yellow">2</div>
+              <div class="dot dot--green">3</div>
+              <div class="glass-card__title"></div>
+            </div>
+            <div class="placeholder">
+              <div class="placeholder__icon"></div>
+              <div class="placeholder__text"></div>
+            </div>
+
+            <div class="mini-list">
+              <div class="mini">
+                <div class="mini__bar">dfd</div>
+                <div class="mini__bar mini__bar--short">sss</div>
+              </div>
+              <div class="mini">
+                <div class="mini__bar">sxsxs</div>
+                <div class="mini__bar mini__bar--short">sxsx</div>
+              </div>
+              <div class="mini">
+                <div class="mini__bar"></div>
+                <div class="mini__bar mini__bar--short"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container search">
+        <form class="search__grid">
+          <label class="field">
+            <span class="field__label">Марка</span>
+            <select class="field__control">
+              <option>Любая</option>
+              <option>Toyota</option>
+              <option>BMW</option>
+              <option>Mercedes</option>
+              <option>Hyundai</option>
+              <option>lexus</option>
+              <option>kia</option>
+              <option>Audi</option>
+              <option>Volkswagen</option>
+              <option>Porsche</option>
+              <option>Nissan</option>
+              <option>Tesla</option>
+              <option>BYD</option>
+              <option>Honda</option>
+              <option>Lada</option>
+              <option>Ford</option>
+              <option>Chevrolet</option>
+              <option>Range Rover</option>
+              <option>Yamaha</option>
+              <option>Kawasaki</option>
+              <option>Harley-Davidson</option>
+              <option>Jet Sky</option>
+              <option>Boat</option>
+              <option>Jeep</option>
+              <option>Ducati</option>
+
+              
+              
+            </select>
+          </label>
+
+          <label class="field">
+            <span class="field__label">Модель</span>
+            <input class="field__control" placeholder="Например: Camry" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Год от</span>
+            <input class="field__control" type="number" placeholder="2015" />
+          </label>
+
+          <label class="field">
+            <span class="field__label">Цена до</span>
+            <input class="field__control" type="number" placeholder="1500000" />
+          </label>
+
+          <button class="btn btn--primary search__btn" type="button">
+            Найти авто
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2 class="section__title">Свежие объявления</h2>
+            
+          </div>
+
+          <div class="chips">
+            <button class="chip chip--active" type="button">Все</button>
+            <button class="chip" type="button">Седаны</button>
+            <button class="chip" type="button">Кроссоверы</button>
+            <button class="chip" type="button">Электро</button>
+            <button class="chip" type="button">Мотоциклы</button>
+            <button class="chip" type="button">Лодки</button>
+            <button class="chip" type="button">Пикапы</button>
+          </div>
+        </div>
+
+        <div class="grid">
+          
+          <!-- <article class="card">
+            <div class="card__media">
+              <div class="media-placeholder">
+                <img src="images/0dd4c90cfaf9379bd49884742dd59b7e (1).jpg" alt="background" width="100%" height="100%">
+              </div>
+              <div class="badge">Проверено</div>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Toyota Camry</h3>
+                <div class="price">1 450  сом</div>
+              </div>
+              <div class="meta">
+                <span>2018</span><span>•</span><span>2.5 AT</span><span>•</span><span>68 000 км</span>
+              </div>
+              <div class="tags">
+                <span class="tag">Бишкек</span>
+                <span class="tag">1 владелец</span>
+                <span class="tag">Без ДТП</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--ghost" type="button">В избранное</button>
+                <button class="btn btn--primary" type="button">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="card">
+            <div class="card__media">
+              <div class="media-placeholder">
+                <img src="images/2023-bmw-x5.jpg" alt="background" width="100%" height="100%">
+              </div>
+              <div class="badge badge--soft">Новая цена</div>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">BMW X5</h3>
+                <div class="price">3 900 000 сом</div>
+              </div>
+              <div class="meta">
+                <span>2017</span><span>•</span><span>3.0 AT</span><span>•</span><span>92 000 км</span>
+              </div>
+              <div class="tags">
+                <span class="tag">Кант</span>
+                <span class="tag">Сервисная</span>
+                <span class="tag">Торг</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--ghost" type="button">В избранное</button>
+                <button class="btn btn--primary" type="button">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="card">
+            <div class="card__media">
+              <div class="media-placeholder">
+                <img src="images/Model3-Buyers-Guide-1024x683.avif" alt="background" width="100%" height="100%">
+              </div>
+              <div class="f"></div>
+              <div class="badge badge--outline">Электро</div>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Tesla Model 3</h3>
+                <div class="price">3 200 000 сом</div>
+              </div>
+              <div class="meta">
+                <span>2020</span><span>•</span><span>EV</span><span>•</span><span>54 000 км</span>
+              </div>
+              <div class="tags">
+                <span class="tag">Бишкек</span>
+                <span class="tag">Быстрая зарядка</span>
+                <span class="tag">Гарантия</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--ghost" type="button">В избранное</button>
+                <button class="btn btn--primary" type="button">Подробнее</button>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="card">
+            <div class="card__media">
+              <div class="media-placeholder">
+                <img src="images/1.jpg" alt="background" width="100%" height="100%">
+              </div>
+              <div class="badge badge--soft">Срочно</div>
+            </div>
+            <div class="card__body">
+              <div class="card__top">
+                <h3 class="card__title">Mercedes C200</h3>
+                <div class="price">2 250 000 сом</div>
+              </div>
+              <div class="meta">
+                <span>2016</span><span>•</span><span>2.0 AT</span><span>•</span><span>110 000 км</span>
+              </div>
+              <div class="tags">
+                <span class="tag">Ош</span>
+                <span class="tag">Обмен</span>
+                <span class="tag">Кредит</span>
+              </div>
+              <div class="card__actions">
+                <button class="btn btn--ghost" type="button">В избранное</button>
+                <button class="btn btn--primary" type="button">Подробнее</button>
+              </div>
+            </div>
+          </article> -->
+        </div> 
+      </div>
+    </section>
+
+    <section class="section section--alt" id="how">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <h2 class="section__title">Как купить</h2>
+            <p class="section__desc">Три шага — и сделка готова.</p>
+          </div>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step__num">01</div>
+            <div class="step__title">Выбери авто</div>
+            <div class="step__text">Смотри карточки, фильтруй по цене и году.</div>
+          </div>
+          <div class="step">
+            <div class="step__num">02</div>
+            <div class="step__title">Проверь</div>
+            <div class="step__text">Добавь проверки: VIN, история, диагностика.</div>
+          </div>
+          <div class="step">
+            <div class="step__num">03</div>
+            <div class="step__title">Оформи</div>
+            <div class="step__text">Связь с продавцом и оформление документов.</div>
+          </div>
+        </div> 
+      </div>
+    </section>
+
+    
+
+        
+    
+    
+  </main>
+<div class="interactiv">
+      <h2>PAnel</h2>
+      <p>nenenennee</p>
+    </div>
+  <footer class="footer" id="contacts">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <div class="logo logo--footer">
+          <span class="logo__mark">A</span>
+          <span class="logo__text">AutoMarket</span>
+       
+      <div class="footer__cols">
+        <div class="footer__col">
+          <div class="footer__title">Разделы</div>
+          <a href="#catalog">Каталог</a>
+          <a href="#how">Как купить</a>
+          <a href="#about">О нас</a>
+        </div>
+        <div class="footer__col">
+          <div class="footer__title">Контакты</div>
+          <a href="#">Telegram</a>
+          <a href="#">WhatsApp</a>
+          <a href="#">Email</a>
+        </div>
+      </div>
+    </div>
+
+   
+  </footer>
+  
+  
+  
+<div class="modal" id="adModal">
+  <div class="ad-overlay" id="closeModalOverlay"></div>
+
+  <div class="ad-modal">
+    <div class="ad-top">
+      <div>
+        <h2 class="ad-title">Подать объявление</h2>
+        <p class="ad-subtitle">Заполни данные — объявление появится в каталоге</p>
+      </div>
+
+      <button id="closeModal" type="button" class="ad-x">✕</button>
+    </div>
+
+    <div class="ad-body">
+      <div class="ad-grid">
+        <!-- Левая колонка -->
+        <div class="ad-col">
+          <div class="ad-card">
+            <div class="ad-card__title">Основное</div>
+
+            <div class="ad-fields two">
+              <label class="ad-field">
+                <span>Марка *</span>
+                <input type="text" id="adBrand" placeholder="Toyota">
+              </label>
+
+              <label class="ad-field">
+                <span>Модель *</span>
+                <input type="text" id="adModel" placeholder="Camry">
+              </label>
+
+              <label class="ad-field">
+                <span>Год *</span>
+                <input type="number" id="adYear" placeholder="2020">
+              </label>
+
+              <label class="ad-field">
+                <span>Тип *</span>
+                <select id="adType">
+                  <option value="car">Седан</option>
+                  <option value="suv">Кроссовер</option>
+                  <option value="electric">Электро</option>
+                  <option value="motorcycle">Мотоцикл</option>
+                  <option value="boat">Лодка</option>
+                  <option value="pickup">Пикап</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-card__title">Характеристики</div>
+
+            <div class="ad-fields two">
+              <label class="ad-field">
+                <span>Объём</span>
+                <input type="number" id="adEngine" placeholder="2.5">
+              </label>
+
+              <label class="ad-field">
+                <span>Пробег</span>
+                <input type="text" id="adKm" placeholder="198 836">
+              </label>
+
+              <label class="ad-field">
+                <span>Местоположение</span>
+                <input type="text" id="adLocation" placeholder="Бишкек">
+              </label>
+
+              <label class="ad-field">
+                <span>Описание 1</span>
+                <input type="text" id="adCondition" placeholder="Например: Без ДТП, отличное">
+              </label>
+
+              <label class="ad-field full">
+                <span>Описание 2</span>
+                <input type="text" id="adOwner" placeholder="Например: 1 владелец, торг">
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Правая колонка -->
+        <div class="ad-col">
+          <div class="ad-card">
+            <div class="ad-card__title">Цена *</div>
+
+            <label class="ad-field">
+              <span>Цена (сом)</span>
+              <input type="text" id="adPrice" class="ad-price" placeholder="1500000">
+              <small>Без пробелов. Пример: 1500000</small>
+            </label>
+          </div>
+
+          <div class="ad-card">
+            <div class="ad-card__title">Фото *</div>
+
+            <label class="ad-field">
+              <span>Ссылка на фото</span>
+              <input type="text" id="adImage" placeholder="https://...">
+              <small>Вставь ссылку на изображение</small>
+            </label>
+
+            <div class="ad-preview" id="adPreviewBox">
+              <div class="ad-preview__text">Превью появится тут</div>
+              <img class="ad-preview__img" id="adPreviewImg" alt="preview">
+            </div>
+          </div>
+        
+
+          <div class="ad-actions">
+            <button id="submitAd" type="button" class="btn btn--primary">Добавить</button>
+            <button type="button" class="btn btn--ghost" id="closeModal2">Закрыть</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal" id="authModal">
+  <div class="modal__content auth">
+    <div class="auth__top">
+      <h2 id="authTitle">Вход</h2>
+      <button id="closeAuth" type="button" class="btn btn--ghost">Закрыть</button>
+    </div>
+
+    <div class="auth__tabs">
+      <button id="tabLogin" type="button" class="auth__tab auth__tab--active">Вход</button>
+      <button id="tabRegister" type="button" class="auth__tab">Регистрация</button>
+    </div>
+
+    <form id="loginForm" class="auth__form">
+      <input id="loginEmail" type="email" placeholder="Email" required>
+      <input id="loginPassword" type="password" placeholder="Пароль" required>
+      <button type="submit" class="btn btn--primary">Войти</button>
+      <p id="loginMsg" class="auth__msg"></p>
+    </form>
+
+    <form id="registerForm" class="auth__form" style="display:none;">
+      <input id="regName" type="text" placeholder="Имя" required>
+      <input id="regEmail" type="email" placeholder="Email" required>
+      <input id="regPassword" type="password" placeholder="Пароль" required>
+      <button type="submit" class="btn btn--primary">Создать аккаунт</button>
+      <p id="regMsg" class="auth__msg"></p>
+    </form>
+  </div>
+</div>
+
+
+<div class="modal" id="detailsModal">
+  <div class="details-overlay" id="closeDetailsOverlay"></div>
+
+  <div class="details-modal">
+    <div class="details-top">
+      <div>
+        <h2 class="details-title">Объявление</h2>
+        <p class="details-subtitle">Проверь характеристики и свяжись с продавцом</p>
+      </div>
+
+      <button id="closeDetails" type="button" class="details-x">✕</button>
+    </div>
+
+    <div class="details-body">
+    
+      <div id="detailsContent"></div>
+    </div>
+
+    <div class="details-actions">
+      <button class="btn btn--primary contact-btn" type="button">Диогностика</button>
+      <button class="btn btn--primary Images-btn" type="button">Фотографии</button>
+
+      <a id="detailsCall" class="btn btn--primary" href="#" style="text-decoration:none;">Позвонить</a>
+      <a id="detailsWa" class="btn btn--primary" href="#" style="text-decoration:none;">WhatsApp</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
